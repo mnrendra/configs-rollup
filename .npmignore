@@ -1,0 +1,16 @@
+.git
+.github/
+node_modules/
+src/
+.czrc
+.eslintrc*
+.gitignore
+.npmignore
+.npmrc
+.releaserc
+clean-package.config.json
+jest.config.json
+package-lock.json
+package.json.backup
+rollup.config.mjs
+tsconfig.json
