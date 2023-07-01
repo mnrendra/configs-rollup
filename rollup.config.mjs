@@ -11,14 +11,14 @@ const { main, module, types } = JSON.parse(
 const bundle = config => ({
   ...config,
   input: 'src/index.ts',
-  external: id => !/^[./]/.test(id)
+  external: (...args) => !/^[./]/.test(args[0])
 })
 
 // Rollup config
 export default [
   // Main Module
   bundle({
-    plugins: [esbuild()],
+    plugins: esbuild(),
     output: [
       // CommonJs
       {
@@ -35,7 +35,7 @@ export default [
 
   // Declaration Types
   bundle({
-    plugins: [dts()],
+    plugins: dts(),
     output: {
       file: types,
       format: 'es'
